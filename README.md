@@ -17,4 +17,4 @@ The accuracy of the model is: **97.217%**
 
 Steps to follow:
 
-**3)** Run **spam_classifier.py**. This uses Naive Bayes and tells the accuracy of the model.
+Run **spam_classifier.py**. This uses Naive Bayes and tells the accuracy of the model.
