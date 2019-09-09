@@ -1,9 +1,9 @@
-# Spam-Classifier
-This is a spam classifier that uses Naive Bayes probability method.
+# Spam or Not
+This is a spam classifier that uses **Naive Bayes probability** method.
 
 The dataset used in the model is provided in the form of 2 folders:- **ham** and **spam**
 
-The link for the dataset is : **https://www.kaggle.com/veleon/ham-and-spam-dataset**
+The link for the dataset is [**here.**](https://www.kaggle.com/veleon/ham-and-spam-dataset)
 
 Python Libraries used:
 
