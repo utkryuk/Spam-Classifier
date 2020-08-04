@@ -19,7 +19,14 @@ Steps to follow:
 
 Run **spam_classifier.py**. This uses Naive Bayes and tells the accuracy of the model.
 
-### Future Scope
+## To-Do
+
+- [ ] Converting the ML code into class.
+- [ ] Web App
+- [ ] Deploy
+- [ ] Adding Comments
+ 
+## Future Scope
 ---
 
 This model can be further extended into a _website_ in which there will be a search box that will check whether the email is spam or not.
