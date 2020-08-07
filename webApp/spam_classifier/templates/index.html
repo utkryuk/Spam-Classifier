@@ -1,0 +1,10 @@
+<h1>Hellos</h1>
+<!--
+<form action="{% url 'success' %}" method="POST">
+
+-->
+<form action="predict/" method="POST">
+    {% csrf_token %}
+    <textarea class="email-box" name="email_body" rows="15" cols="75" placeholder="Enter Your Email Here..."></textarea><br/>
+    <input type="submit" class="my-cta-button" value="Predict">
+</form>

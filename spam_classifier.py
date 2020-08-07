@@ -11,7 +11,7 @@ count = vectoriser.fit_transform(train['Message'].values)
 
 # print(count)
 
-pickle.dump(count, open('count-transform.pkl', 'wb'))
+pickle.dump(vectoriser, open('count-transform.pkl', 'wb'))
 
 target = train['Class'].values
 
@@ -30,6 +30,23 @@ test = pd.read_csv('test.csv')
 
 prediction = vectoriser.transform(test['Message'])
 
+'''
+################################################################
+print(prediction.shape)
+print(test['Message'].shape)
+# print(vectoriser.transform(test['Message'][0]))
+# print(prediction)
+print(type(test['Message']))
+
+abc = test['Message'][0]
+abc_series = pd.Series(abc)
+print(abc_series.shape)
+# print(prediction)
+print(vectoriser.transform(abc_series))
+print(type(vectoriser.transform(abc_series)))
+
+################################################################
+'''
 
 predictionfromNaiveBayes = classifier.predict(prediction)
 

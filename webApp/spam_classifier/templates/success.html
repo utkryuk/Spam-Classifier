@@ -1,0 +1,9 @@
+<h1> Successfully done..</h1>
+
+<div>
+    {% if prediction == "spam" %}
+        <h1>Prediction: Gotcha! This is a SPAM message.</h1>
+    {% elif prediction == "ham" %}
+        <h1>Prediction: Great! This is NOT a spam message.</h1>
+    {% endif %}
+</div>
