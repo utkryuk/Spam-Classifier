@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import SpamForm
 import os
 import pickle
 import pandas as pd
@@ -25,3 +26,13 @@ def predict(request):
         return render(request, 'result.html', {"prediction": my_prediction[0]})
     else:
         return render(request, 'fail.html')
+
+def formclass(request):
+    if request.method == 'POST':
+        form = SpamForm(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = SpamForm()
+
+    return render(request, 'resultFormClass.html', {'form': form})
