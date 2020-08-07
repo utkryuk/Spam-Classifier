@@ -1,7 +1,7 @@
 from django import forms
 
 class SpamForm(forms.Form):
-    email = forms.CharField(
+    email_body = forms.CharField(
         widget=forms.Textarea(),
         help_text="Write the message here!"
     )
@@ -12,7 +12,7 @@ class SpamForm(forms.Form):
     
     def clean(self):
         cleaned_data = super(SpamForm, self).clean()
-        email_body = cleaned_data.get('email')
+        email_body = cleaned_data.get('email_body')
         if not email_body:
             raise forms.ValidationError('You have to write something!')
     

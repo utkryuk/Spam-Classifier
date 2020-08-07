@@ -17,8 +17,11 @@ classifier = pickle.load(open(os.path.join(ML_MODEL_DIR, 'spam-or-ham-classifier
 def indexPage(request):
     return render(request, 'classifier.html')
 
+'''
+Working Python Function
 def predict(request):
     if request.method == 'POST':
+        print(request.POST['email_body'])
         emailBody = request.POST['email_body']
         data = [emailBody]
         vect = cv.transform(data).toarray()
@@ -26,6 +29,27 @@ def predict(request):
         return render(request, 'result.html', {"prediction": my_prediction[0]})
     else:
         return render(request, 'fail.html')
+'''
+
+def predict(request):
+    if request.method == 'POST':
+        form = SpamForm(request.POST)
+        if form.is_valid():
+            print(request.POST['email_body'])
+            emailBody = request.POST['email_body']
+            data = [emailBody]
+            vect = cv.transform(data).toarray()
+            my_prediction = classifier.predict(vect)
+            print(my_prediction)
+
+        else:
+            form = SpamForm()
+        
+        return render(request, 'result.html', {"prediction": my_prediction[0]})
+
+    else:
+        return render(request, 'fail.html')
+            
 
 def formclass(request):
     if request.method == 'POST':
