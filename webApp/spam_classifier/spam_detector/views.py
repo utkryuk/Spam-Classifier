@@ -45,7 +45,7 @@ def predict(request):
         else:
             form = SpamForm()
         
-        return render(request, 'result.html', {"prediction": my_prediction[0]})
+        return render(request, 'predict.html', {"prediction": my_prediction[0]})
 
     else:
         return render(request, 'fail.html')

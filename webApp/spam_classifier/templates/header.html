@@ -1,5 +1,4 @@
 {% load static %}
-{% load widget_tweaks %}
 
 <head>
     <meta charset="utf-8">
@@ -9,14 +8,9 @@
     <title>Web App</title>
   </head>
 
-{% include 'header.html' %}
-  
-  <div>
-    <form action="{% url 'result' %}" method="post" validate>
-      {% csrf_token %}
-      {% include 'bs4_form.html' with form=form %}
-      <button type="submit" class="btn btn-primary">Predict</button>
-    </form>
+<div class="container">
+    <h2 class='container-heading'><span>Spam Detector</span> for EMAIL</h2>
+        <div class='description'>
+      <p>A Machine Learning Web App, Built with <strong>Django</strong>, Deployed using <strong>Heroku</strong>.</p>
+      </div>
   </div>
-  
-{% include 'footer.html' %}

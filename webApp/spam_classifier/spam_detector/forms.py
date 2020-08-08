@@ -2,13 +2,10 @@ from django import forms
 
 class SpamForm(forms.Form):
     email_body = forms.CharField(
-        widget=forms.Textarea(attrs={"rows":15}),
-        help_text="Write the email here!"
+        widget=forms.Textarea(attrs={"rows":8,'placeholder':'Enter the text here..'}),
+        help_text="Write the email here!",
     )
-    # source = forms.CharField(
-    #     max_length=50,
-    #     widget=forms.HiddenInput()
-    # )
+
     
     def clean(self):
         cleaned_data = super(SpamForm, self).clean()

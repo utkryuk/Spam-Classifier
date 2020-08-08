@@ -10,13 +10,15 @@
   </head>
 
 {% include 'header.html' %}
-  
-  <div>
-    <form action="{% url 'result' %}" method="post" validate>
-      {% csrf_token %}
-      {% include 'bs4_form.html' with form=form %}
-      <button type="submit" class="btn btn-primary">Predict</button>
-    </form>
-  </div>
-  
+
+<div>
+    {% if prediction == "spam" %}
+        <h1>Gotcha! This is a <span class="danger">SPAM </span>message.</h1>
+    {% elif prediction == "ham" %}
+        <h1>Great! This is a <span class="safe">safe</span> message.</h1>
+    {% endif %}
+</div>
+
+
+
 {% include 'footer.html' %}
