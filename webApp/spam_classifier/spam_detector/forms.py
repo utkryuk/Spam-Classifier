@@ -2,8 +2,8 @@ from django import forms
 
 class SpamForm(forms.Form):
     email_body = forms.CharField(
-        widget=forms.Textarea(),
-        help_text="Write the message here!"
+        widget=forms.Textarea(attrs={"rows":15}),
+        help_text="Write the email here!"
     )
     # source = forms.CharField(
     #     max_length=50,

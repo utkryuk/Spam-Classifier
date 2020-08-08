@@ -1,0 +1,49 @@
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    max-height: 20em;
+    color: red;
+    border: red;
+    border-width: 6px;
+}
+
+.container{
+	padding: 30px;
+    position: relative;
+    text-align: center;
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+}
+
+
+@keyframes change-gradient {
+	0%{
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}
+
+.form-text{
+    text-align: center;
+}
+
+.container span{
+    color: #ff0000;
+}
+
+.container-heading{
+    margin: 0;
+}
+
+.btn-primary{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
