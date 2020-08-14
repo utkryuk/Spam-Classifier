@@ -1,5 +1,12 @@
 import numpy as np
 import pandas as pd
+from creatingHamDataframe import Conversion
+
+
+obj = Conversion()
+
+obj.convertFilesIntoCSV('ham')
+obj.convertFilesIntoCSV('spam')
 
 ham = pd.read_csv('ham.csv')
 spam = pd.read_csv('spam.csv')
