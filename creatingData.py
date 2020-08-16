@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from creatingHamDataframe import Conversion
+from conversion import Conversion
 
 
 obj = Conversion()

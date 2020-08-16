@@ -47,3 +47,15 @@ def formclass(request):
         form = SpamForm()
 
     return render(request, 'index.html', {'form': form})
+
+from django.views import defaults as default_views
+
+# def handler400(request, exception, template_name="404.html"):
+#     response = render(template_name)
+#     response.status_code = 404
+#     return response
+
+def handler404(request, *args, **kwargs):
+    defaults = {"template_name": "404.html"}
+    defaults.update(kwargs)
+    return default_views.page_not_found(request, *args, **defaults)

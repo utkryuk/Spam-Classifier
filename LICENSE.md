@@ -1,4 +1,6 @@
-MIT License
+CSS files are licensed under MIT. (https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md)
+
+## MIT License
 
 Copyright (c) 2019 Utkarsh Gupta
 

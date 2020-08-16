@@ -15,8 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('spam_detector.urls'))
+]
+
+
+# handler404 = 'spam_detector.views.bad_request'
+
+from functools import (
+    partial,
+)  # (using partial to pretend an exception has been raised)
+from django.http import (
+    HttpResponseBadRequest,
+    HttpResponseForbidden,
+    HttpResponseNotFound,
+)
+
+from spam_detector.views import handler404
+
+urlpatterns += [
+    # path("400/", partial(handler400, exception=HttpResponseBadRequest())),
+    # path("403/", partial(handler403, exception=HttpResponseForbidden())),
+    path("404/", partial(handler404, exception=HttpResponseNotFound())),
+    # path("500/", handler500),  # "default_views.server_error" doesn't take an exception
 ]

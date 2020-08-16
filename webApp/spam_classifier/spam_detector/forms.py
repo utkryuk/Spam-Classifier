@@ -2,7 +2,7 @@ from django import forms
 
 class SpamForm(forms.Form):
     email_body = forms.CharField(
-        widget=forms.Textarea(attrs={"rows":8,'placeholder':'Enter the text here..'}),
+        widget=forms.Textarea(attrs={"rows":8,'placeholder':'Copy your email here...'}),
         help_text="Write the email here!",
     )
 
